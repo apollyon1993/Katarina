@@ -28,7 +28,7 @@ commands:
     action: getWeather
   # Abrir
   - commmand:
-    input: Abrir goolge
+    input: Abrir google
     entity: open
     action: 
   - commmand:
