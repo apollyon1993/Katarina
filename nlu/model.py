@@ -19,6 +19,7 @@ for command in data['commands']:
 
 chars = set()
 
+
 for input in inputs + outputs:
     for ch in input:
         if ch not in chars:
