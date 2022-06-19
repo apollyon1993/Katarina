@@ -27,7 +27,7 @@ print('Maior sequencia:', max_seq)
 
 #Input Data one-hot encoding
 
-input_data = np.zeros((len(inputs), max_seq, 256), dtype='floar32')
+input_data = np.zeros((len(inputs), max_seq, 256), dtype='float32')
 for i, inp in enumerate(inputs):
     for k, ch in enumerate(bytes(inp.encode('utf-8'))):
         input_data[i, k, int(ch)] = 1.0
@@ -64,10 +64,10 @@ print(output_data[0])
 
 model = Sequential()
 model.add(LSTM(128))
-model.add(Dense(len(output_data), activation='sofmax'))
+model.add(Dense(len(output_data), activation='softmax'))
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc'])
-model.fit(input_data, output_data, epochs=16)
+model.fit(input_data, output_data, epochs=128)
 
 '''
 print(inputs)
